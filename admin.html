@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Painel Administrativo - Churrasquinho do Cumpadi">
+    <title>Painel Administrativo | Churrasquinho do Cumpadi</title>
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+    <!-- Barra de Navegação Admin -->
+    <header class="admin-navbar">
+        <div class="container">
+            <div class="admin-logo">
+                <a href="admin.html">
+                    <img src=" faz uma logo GOLDEN GRILL.jpeg"" alt="Churrasquinho do Cumpadi" width="180">
+                    <span>Painel Admin</span>
+                </a>
+            </div>
+            
+            <nav class="admin-menu">
+                <ul>
+                    <li><a href="#dashboard" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="#pedidos"><i class="fas fa-clipboard-list"></i> Pedidos</a></li>
+                    <li><a href="#estoque"><i class="fas fa-boxes"></i> Estoque</a></li>
+                    <li><a href="#relatorios"><i class="fas fa-chart-line"></i> Relatórios</a></li>
+                    <li><a href="#suporte"><i class="fas fa-headset"></i> Suporte</a></li>
+                    <li><a href="#avaliacoes"><i class="fas fa-star"></i> Avaliações</a></li>
+                </ul>
+            </nav>
+            
+            <div class="admin-user">
+                <div class="user-dropdown">
+                    <img src="faz uma logo GOLDEN GRILL.jpeg"" alt="Admin" class="user-avatar">
+                    <span class="user-name">Admin</span>
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="dropdown-menu">
+                        <a href="#"><i class="fas fa-user-cog"></i> Configurações</a>
+                        <a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="admin-main">
+        <div class="container">
+            <!-- Seção de Dashboard -->
+            <section id="dashboard" class="admin-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-tachometer-alt"></i> Dashboard</h2>
+                    <p>Visão geral do negócio</p>
+                </div>
+                
+                <!-- Cards de Resumo -->
+                <div class="summary-cards">
+                    <!-- Card Lucro Diário -->
+                    <div class="summary-card">
+                        <div class="card-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Lucro Hoje</h3>
+                            <div class="card-value">R$ 2.845,50</div>
+                            <div class="card-change positive">
+                                <i class="fas fa-arrow-up"></i> 12% em relação a ontem
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card Lucro Semanal -->
+                    <div class="summary-card">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Lucro Semanal</h3>
+                            <div class="card-value">R$ 15.327,80</div>
+                            <div class="card-change positive">
+                                <i class="fas fa-arrow-up"></i> 8% em relação à semana passada
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card Lucro Mensal -->
+                    <div class="summary-card">
+                        <div class="card-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Lucro Mensal</h3>
+                            <div class="card-value">R$ 58.642,30</div>
+                            <div class="card-change negative">
+                                <i class="fas fa-arrow-down"></i> 5% em relação ao mês passado
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card Pedidos Hoje -->
+                    <div class="summary-card">
+                        <div class="card-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Pedidos Hoje</h3>
+                            <div class="card-value">47</div>
+                            <div class="card-change positive">
+                                <i class="fas fa-arrow-up"></i> 18% em relação a ontem
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Seção de Status de Pedidos -->
+                <div class="status-cards">
+                    <div class="status-header">
+                        <h3>Status dos Pedidos</h3>
+                        <a href="#pedidos" class="btn btn-secondary">Ver Todos</a>
+                    </div>
+                    
+                    <div class="status-grid">
+                        <!-- Pedidos Pendentes -->
+                        <div class="status-card pending">
+                            <div class="status-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="status-content">
+                                <h4>Pendentes</h4>
+                                <div class="status-value">12</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Pedidos Aceitos -->
+                        <div class="status-card accepted">
+                            <div class="status-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="status-content">
+                                <h4>Aceitos</h4>
+                                <div class="status-value">8</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Pedidos em Preparo -->
+                        <div class="status-card preparing">
+                            <div class="status-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="status-content">
+                                <h4>Em Preparo</h4>
+                                <div class="status-value">15</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Pedidos Concluídos -->
+                        <div class="status-card completed">
+                            <div class="status-icon">
+                                <i class="fas fa-check-double"></i>
+                            </div>
+                            <div class="status-content">
+                                <h4>Concluídos</h4>
+                                <div class="status-value">32</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Pedidos Cancelados -->
+                        <div class="status-card canceled">
+                            <div class="status-icon">
+                                <i class="fas fa-times-circle"></i>
+                            </div>
+                            <div class="status-content">
+                                <h4>Cancelados</h4>
+                                <div class="status-value">3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Produtos Mais Vendidos -->
+                <div class="top-products">
+                    <div class="section-header">
+                        <h3><i class="fas fa-trophy"></i> Produtos Mais Vendidos</h3>
+                        <p>Top 5 produtos mais vendidos esta semana</p>
+                    </div>
+                    
+                    <div class="products-grid">
+                        <!-- Produto 1 -->
+                        <div class="product-card">
+                            <div class="product-rank">1</div>
+                            <div class="product-image">
+                                <img src="../assets/picanha.jpg" alt="Picanha">
+                            </div>
+                            <div class="product-info">
+                                <h4>Picanha Premium</h4>
+                                <div class="product-stats">
+                                    <span class="product-sales">42 vendas</span>
+                                    <span class="product-revenue">R$ 3.780,00</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Produto 2 -->
+                        <div class="product-card">
+                            <div class="product-rank">2</div>
+                            <div class="product-image">
+                                <img src="../assets/porcao-costela.jpg" alt="Costela">
+                            </div>
+                            <div class="product-info">
+                                <h4>Costela no Bafo</h4>
+                                <div class="product-stats">
+                                    <span class="product-sales">38 vendas</span>
+                                    <span class="product-revenue">R$ 2.850,00</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Produto 3 -->
+                        <div class="product-card">
+                            <div class="product-rank">3</div>
+                            <div class="product-image">
+                                <img src="../assets/frango.jpg" alt="Frango">
+                            </div>
+                            <div class="product-info">
+                                <h4>Frango à Passarinho</h4>
+                                <div class="product-stats">
+                                    <span class="product-sales">35 vendas</span>
+                                    <span class="product-revenue">R$ 1.750,00</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Produto 4 -->
+                        <div class="product-card">
+                            <div class="product-rank">4</div>
+                            <div class="product-image">
+                                <img src="../assets/linguiça.jpg" alt="Linguiça">
+                            </div>
+                            <div class="product-info">
+                                <h4>Linguiça Toscana</h4>
+                                <div class="product-stats">
+                                    <span class="product-sales">28 vendas</span>
+                                    <span class="product-revenue">R$ 1.120,00</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Produto 5 -->
+                        <div class="product-card">
+                            <div class="product-rank">5</div>
+                            <div class="product-image">
+                                <img src="../assets/refri.jpg" alt="Refrigerante">
+                            </div>
+                            <div class="product-info">
+                                <h4>Refrigerante 2L</h4>
+                                <div class="product-stats">
+                                    <span class="product-sales">25 vendas</span>
+                                    <span class="product-revenue">R$ 175,00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Seção de Pedidos -->
+            <section id="pedidos" class="admin-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-clipboard-list"></i> Pedidos</h2>
+                    <p>Gerencie todos os pedidos realizados</p>
+                </div>
+                
+                <!-- Filtros de Pedidos -->
+                <div class="order-filters">
+                    <div class="filter-group">
+                        <label for="order-status">Status:</label>
+                        <select id="order-status">
+                            <option value="all">Todos</option>
+                            <option value="pending">Pendentes</option>
+                            <option value="accepted">Aceitos</option>
+                            <option value="preparing">Em Preparo</option>
+                            <option value="completed">Concluídos</option>
+                            <option value="canceled">Cancelados</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="order-date">Data:</label>
+                        <select id="order-date">
+                            <option value="today">Hoje</option>
+                            <option value="week">Esta Semana</option>
+                            <option value="month">Este Mês</option>
+                            <option value="custom">Personalizado</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="order-search">Buscar:</label>
+                        <input type="text" id="order-search" placeholder="Nº Pedido ou Cliente">
+                        <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                    </div>
+                    
+                    <button class="btn btn-secondary"><i class="fas fa-download"></i> Exportar</button>
+                </div>
+                
+                <!-- Tabela de Pedidos -->
+                <div class="orders-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nº Pedido</th>
+                                <th>Cliente</th>
+                                <th>Data/Hora</th>
+                                <th>Itens</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Pedido 1 -->
+                            <tr>
+                                <td>#1542</td>
+                                <td>Carlos Silva</td>
+                                <td>05/04/2023 18:30</td>
+                                <td>3</td>
+                                <td>R$ 89,90</td>
+                                <td><span class="status-badge preparing">Em Preparo</span></td>
+                                <td>
+                                    <button class="btn-action view" title="Visualizar"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-action edit" title="Editar"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-action receipt" title="Recibo"><i class="fas fa-receipt"></i></button>
+                                </td>
+                            </tr>
+                            
+                            <!-- Pedido 2 -->
+                            <tr>
+                                <td>#1541</td>
+                                <td>Ana Oliveira</td>
+                                <td>05/04/2023 17:45</td>
+                                <td>5</td>
+                                <td>R$ 127,50</td>
+                                <td><span class="status-badge completed">Concluído</span></td>
+                                <td>
+                                    <button class="btn-action view" title="Visualizar"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-action edit" title="Editar"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-action receipt" title="Recibo"><i class="fas fa-receipt"></i></button>
+                                </td>
+                            </tr>
+                            
+                            <!-- Pedido 3 -->
+                            <tr>
+                                <td>#1540</td>
+                                <td>João Santos</td>
+                                <td>05/04/2023 16:20</td>
+                                <td>2</td>
+                                <td>R$ 65,00</td>
+                                <td><span class="status-badge pending">Pendente</span></td>
+                                <td>
+                                    <button class="btn-action view" title="Visualizar"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-action edit" title="Editar"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-action receipt" title="Recibo"><i class="fas fa-receipt"></i></button>
+                                </td>
+                            </tr>
+                            
+                            <!-- Pedido 4 -->
+                            <tr>
+                                <td>#1539</td>
+                                <td>Maria Souza</td>
+                                <td>05/04/2023 15:10</td>
+                                <td>4</td>
+                                <td>R$ 98,75</td>
+                                <td><span class="status-badge accepted">Aceito</span></td>
+                                <td>
+                                    <button class="btn-action view" title="Visualizar"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-action edit" title="Editar"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-action receipt" title="Recibo"><i class="fas fa-receipt"></i></button>
+                                </td>
+                            </tr>
+                            
+                            <!-- Pedido 5 -->
+                            <tr>
+                                <td>#1538</td>
+                                <td>Pedro Costa</td>
+                                <td>05/04/2023 14:05</td>
+                                <td>1</td>
+                                <td>R$ 45,90</td>
+                                <td><span class="status-badge canceled">Cancelado</span></td>
+                                <td>
+                                    <button class="btn-action view" title="Visualizar"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-action edit" title="Editar"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-action receipt" title="Recibo"><i class="fas fa-receipt"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Paginação -->
+                <div class="pagination">
+                    <button class="page-btn disabled"><i class="fas fa-chevron-left"></i></button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+            
+            <!-- Seção de Estoque -->
+            <section id="estoque" class="admin-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-boxes"></i> Controle de Estoque</h2>
+                    <p>Gerencie os produtos e estoque</p>
+                </div>
+                
+                <!-- Controles de Estoque -->
+                <div class="stock-controls">
+                    <button class="btn btn-primary"><i class="fas fa-plus"></i> Adicionar Produto</button>
+                    <button class="btn btn-secondary"><i class="fas fa-file-import"></i> Importar</button>
+                    <button class="btn btn-secondary"><i class="fas fa-file-export"></i> Exportar</button>
+                    
+                    <div class="stock-search">
+                        <input type="text" placeholder="Buscar produto...">
+                        <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Tabela de Estoque -->
+                <div class="stock-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Categoria</th>
+                                <th>Estoque</th>
+                                <th>Preço</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Produto 1 -->
+                            <tr>
+                                <td>
+                                    <div class="product-cell">
+                                        <img src="../assets/picanha.jpg" alt="Picanha">
+                                        <span>Picanha Premium</span>
+                                    </div>
+                                </td>
+                                <td>Carnes</td>
+                                <td>
+                                    <div class="stock-level">
+                                        <span class="stock-value">15 kg</span>
+                                        <div class="stock-bar high"></div>
+                                    </div>
+                                </td>
+                                <td>R$ 89,90</td>
+                                <td><span class="status-badge active">Ativo</span></td>
+                                <td>
+                                    <button class="btn-action edit" title="Editar"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-action delete" title="Excluir"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            
+                            <!-- Produto 2 -->
+                            <tr>
+                                <td>
+                                    <div class="product-cell">
+                                        <img src="../assets/porcao-costela.jpg" alt="Costela">
+                                        <span>Costela no Bafo</span>
+                                    </div>
+                                </td>
+                                <td>Porções</td>
+                                <td>
+                                    <div class="stock-level">
+                                        <span class="stock-value">8 kg</span>
+                                        <div class="stock-bar medium"></div>
+                                    </div>
+                                </td>
+                                <td>R$ 75,00</td>
+                                <td><span class="status-badge active">Ativo</span></td>
+                                <td>
+                                    <button class="btn-action edit" title="Editar"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-action delete" title="Excluir"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            
+                            <!-- Produto 3 -->
+                            <tr>
+                                <td>
+                                    <div class="product-cell">
+                                        <img src="../assets/frango.jpg" alt="Frango">
+                                        <span>Frango à Passarinho</span>
+                                    </div>
+                                </td>
+                                <td>Porções</td>
+                                <td>
+                                    <div class="stock-level">
+                                        <span class="stock-value">5 kg</span>
+                                        <div class="stock-bar low"></div>
+                                    </div>
+                                </td>
+                                <td>R$ 50,00</td>
+                                <td><span class="status-badge active">Ativo</span></td>
+                                <td>
+                                    <button class="btn-action edit" title="Editar"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-action delete" title="Excluir"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            
+                            <!-- Produto 4 -->
+                            <tr>
+                                <td>
+                                    <div class="product-cell">
+                                        <img src="../assets/linguiça.jpg" alt="Linguiça">
+                                        <span>Linguiça Toscana</span>
+                                    </div>
+                                </td>
+                                <td>Carnes</td>
+                                <td>
+                                    <div class="stock-level">
+                                        <span class="stock-value">3 kg</span>
+                                        <div class="stock-bar critical"></div>
+                                    </div>
+                                </td>
+                                <td>R$ 40,00</td>
+                                <td><span class="status-badge inactive">Inativo</span></td>
+                                <td>
+                                    <button class="btn-action edit" title="Editar"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-action delete" title="Excluir"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            
+                            <!-- Produto 5 -->
+                            <tr>
+                                <td>
+                                    <div class="product-cell">
+                                        <img src="../assets/refri.jpg" alt="Refrigerante">
+                                        <span>Refrigerante 2L</span>
+                                    </div>
+                                </td>
+                                <td>Bebidas</td>
+                                <td>
+                                    <div class="stock-level">
+                                        <span class="stock-value">12 un</span>
+                                        <div class="stock-bar high"></div>
+                                    </div>
+                                </td>
+                                <td>R$ 7,00</td>
+                                <td><span class="status-badge active">Ativo</span></td>
+                                <td>
+                                    <button class="btn-action edit" title="Editar"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-action delete" title="Excluir"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Paginação -->
+                <div class="pagination">
+                    <button class="page-btn disabled"><i class="fas fa-chevron-left"></i></button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+            
+            <!-- Seção de Relatórios -->
+            <section id="relatorios" class="admin-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-chart-line"></i> Relatórios</h2>
+                    <p>Análise de desempenho e vendas</p>
+                </div>
+                
+                <!-- Filtros de Relatórios -->
+                <div class="report-filters">
+                    <div class="filter-group">
+                        <label for="report-type">Tipo de Relatório:</label>
+                        <select id="report-type">
+                            <option value="sales">Vendas</option>
+                            <option value="revenue">Receita</option>
+                            <option value="products">Produtos</option>
+                            <option value="customers">Clientes</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="report-period">Período:</label>
+                        <select id="report-period">
+                            <option value="week">Semanal</option>
+                            <option value="month">Mensal</option>
+                            <option value="quarter">Trimestral</option>
+                            <option value="year">Anual</option>
+                            <option value="custom">Personalizado</option>
+                        </select>
+                    </div>
+                    
+                    <button class="btn btn-primary"><i class="fas fa-filter"></i> Aplicar Filtros</button>
+                    <button class="btn btn-secondary"><i class="fas fa-download"></i> Exportar PDF</button>
+                </div>
+                
+                <!-- Gráficos -->
+                <div class="report-charts">
+                    <div class="chart-container">
+                        <h3>Vendas Semanais</h3>
+                        <canvas id="weeklySalesChart"></canvas>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <h3>Vendas Mensais</h3>
+                        <canvas id="monthlySalesChart"></canvas>
+                    </div>
+                    
+                    <div class="chart-container full-width">
+                        <h3>Desempenho Anual</h3>
+                        <canvas id="annualPerformanceChart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- Métricas -->
+                <div class="report-metrics">
+                    <div class="metric-card">
+                        <h4>Ticket Médio</h4>
+                        <div class="metric-value">R$ 68,90</div>
+                        <div class="metric-change positive">
+                            <i class="fas fa-arrow-up"></i> 5% em relação ao mês passado
+                        </div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <h4>Clientes Novos</h4>
+                        <div class="metric-value">24</div>
+                        <div class="metric-change positive">
+                            <i class="fas fa-arrow-up"></i> 15% em relação ao mês passado
+                        </div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <h4>Taxa de Cancelamento</h4>
+                        <div class="metric-value">6,5%</div>
+                        <div class="metric-change negative">
+                            <i class="fas fa-arrow-down"></i> 2% em relação ao mês passado
+                        </div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <h4>Horário de Pico</h4>
+                        <div class="metric-value">19:30</div>
+                        <div class="metric-change neutral">
+                            <i class="fas fa-equals"></i> Mesmo do mês passado
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Seção de Suporte -->
+            <section id="suporte" class="admin-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-headset"></i> Tickets de Suporte</h2>
+                    <p>Atendimento aos clientes</p>
+                </div>
+                
+                <!-- Filtros de Suporte -->
+                <div class="support-filters">
+                    <div class="filter-group">
+                        <label for="support-status">Status:</label>
+                        <select id="support-status">
+                            <option value="all">Todos</option>
+                            <option value="open">Abertos</option>
+                            <option value="pending">Pendentes</option>
+                            <option value="resolved">Resolvidos</option>
+                            <option value="closed">Fechados</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="support-priority">Prioridade:</label>
+                        <select id="support-priority">
+                            <option value="all">Todas</option>
+                            <option value="low">Baixa</option>
+                            <option value="medium">Média</option>
+                            <option value="high">Alta</option>
+                            <option value="urgent">Urgente</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="support-search">Buscar:</label>
+                        <input type="text" id="support-search" placeholder="Nº Ticket ou Assunto">
+                        <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Tabela de Tickets -->
+                <div class="support-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nº Ticket</th>
+                                <th>Cliente</th>
+                                <th>Assunto</th>
+                                <th>Data</th>
+                                <th>Prioridade</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Ticket 1 -->
+                            <tr>
+                                <td>#8741</td>
+                                <td>Carlos Silva</td>
+                                <td>Pedido atrasado</td>
+                                <td>05/04/2023</td>
+                                <td><span class="priority-badge high">Alta</span></td>
+                                <td><span class="status-badge pending">Pendente</span></td>
+                                <td>
+                                    <button class="btn-action view" title="Visualizar"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-action edit" title="Responder"><i class="fas fa-reply"></i></button>
+                                </td>
+                            </tr>
+                            
+                            <!-- Ticket 2 -->
+                            <tr>
+                                <td>#8740</td>
+                                <td>Ana Oliveira</td>
+                                <td>Produto errado</td>
+                                <td>04/04/2023</td>
+                                <td><span class="priority-badge medium">Média</span></td>
+                                <td><span class="status-badge open">Aberto</span></td>
+                                <td>
+                                    <button class="btn-action view" title="Visualizar"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-action edit" title="Responder"><i class="fas fa-reply"></i></button>
+                                </td>
+                            </tr>
+                            
+                            <!-- Ticket 3 -->
+                            <tr>
+                                <td>#8739</td>
+                                <td>João Santos</td>
+                                <td>Dúvida sobre cardápio</td>
+                                <td>03/04/2023</td>
+                                <td><span class="priority-badge low">Baixa</span></td>
+                                <td><span class="status-badge resolved">Resolvido</span></td>
+                                <td>
+                                    <button class="btn-action view" title="Visualizar"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-action edit" title="Responder"><i class="fas fa-reply"></i></button>
+                                </td>
+                            </tr>
+                            
+                            <!-- Ticket 4 -->
+                            <tr>
+                                <td>#8738</td>
+                                <td>Maria Souza</td>
+                                <td>Problema com pagamento</td>
+                                <td>02/04/2023</td>
+                                <td><span class="priority-badge urgent">Urgente</span></td>
+                                <td><span class="status-badge closed">Fechado</span></td>
+                                <td>
+                                    <button class="btn-action view" title="Visualizar"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-action edit" title="Responder"><i class="fas fa-reply"></i></button>
+                                </td>
+                            </tr>
+                            
+                            <!-- Ticket 5 -->
+                            <tr>
+                                <td>#8737</td>
+                                <td>Pedro Costa</td>
+                                <td>Elogio ao atendimento</td>
+                                <td>01/04/2023</td>
+                                <td><span class="priority-badge low">Baixa</span></td>
+                                <td><span class="status-badge closed">Fechado</span></td>
+                                <td>
+                                    <button class="btn-action view" title="Visualizar"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-action edit" title="Responder"><i class="fas fa-reply"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Paginação -->
+                <div class="pagination">
+                    <button class="page-btn disabled"><i class="fas fa-chevron-left"></i></button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+            
+            <!-- Seção de Avaliações -->
+            <section id="avaliacoes" class="admin-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-star"></i> Avaliações dos Clientes</h2>
+                    <p>Feedback e satisfação dos clientes</p>
+                </div>
+                
+                <!-- Resumo de Avaliações -->
+                <div class="reviews-summary">
+                    <div class="summary-card">
+                        <div class="rating-overall">
+                            <div class="rating-value">4.7</div>
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="rating-count">128 avaliações</div>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-card">
+                        <div class="rating-details">
+                            <div class="rating-item">
+                                <span class="rating-label">5 estrelas</span>
+                                <div class="rating-bar">
+                                    <div class="rating-fill" style="width: 65%;"></div>
+                                </div>
+                                <span class="rating-percent">65%</span>
+                            </div>
+                            <div class="rating-item">
+                                <span class="rating-label">4 estrelas</span>
+                                <div class="rating-bar">
+                                    <div class="rating-fill" style="width: 20%;"></div>
+                                </div>
+                                <span class="rating-percent">20%</span>
+                            </div>
+                            <div class="rating-item">
+                                <span class="rating-label">3 estrelas</span>
+                                <div class="rating-bar">
+                                    <div class="rating-fill" style="width: 8%;"></div>
+                                </div>
+                                <span class="rating-percent">8%</span>
+                            </div>
+                            <div class="rating-item">
+                                <span class="rating-label">2 estrelas</span>
+                                <div class="rating-bar">
+                                    <div class="rating-fill" style="width: 4%;"></div>
+                                </div>
+                                <span class="rating-percent">4%</span>
+                            </div>
+                            <div class="rating-item">
+                                <span class="rating-label">1 estrela</span>
+                                <div class="rating-bar">
+                                    <div class="rating-fill" style="width: 3%;"></div>
+                                </div>
+                                <span class="rating-percent">3%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Filtros de Avaliações -->
+                <div class="reviews-filters">
+                    <div class="filter-group">
+                        <label for="reviews-rating">Avaliação:</label>
+                        <select id="reviews-rating">
+                            <option value="all">Todas</option>
+                            <option value="5">5 estrelas</option>
+                            <option value="4">4 estrelas</option>
+                            <option value="3">3 estrelas</option>
+                            <option value="2">2 estrelas</option>
+                            <option value="1">1 estrela</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="reviews-date">Data:</label>
+                        <select id="reviews-date">
+                            <option value="all">Todas</option>
+                            <option value="week">Esta Semana</option>
+                            <option value="month">Este Mês</option>
+                            <option value="quarter">Este Trimestre</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="reviews-search">Buscar:</label>
+                        <input type="text" id="reviews-search" placeholder="Nome do cliente ou pedido">
+                        <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Lista de Avaliações -->
+                <div class="reviews-list">
+                    <!-- Avaliação 1 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-author">
+                                <img src="../assets/client1.jpg" alt="Carlos Silva">
+                                <div class="author-info">
+                                    <h4>Carlos Silva</h4>
+                                    <span>Pedido #1542</span>
+                                </div>
+                            </div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>05/04/2023</span>
+                            </div>
+                        </div>
+                        <div class="review-content">
+                            <h4>Melhor churrasco delivery que já pedi!</h4>
+                            <p>A carne veio no ponto perfeito e a entrega foi super rápida. Recomendo a picanha! Com certeza pedirei novamente.</p>
+                        </div>
+                        <div class="review-actions">
+                            <button class="btn btn-primary"><i class="fas fa-reply"></i> Responder</button>
+                            <button class="btn btn-secondary"><i class="fas fa-thumbs-up"></i> Útil</button>
+                            <button class="btn btn-secondary"><i class="fas fa-flag"></i> Denunciar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Avaliação 2 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-author">
+                                <img src="../assets/client2.jpg" alt="Ana Oliveira">
+                                <div class="author-info">
+                                    <h4>Ana Oliveira</h4>
+                                    <span>Pedido #1541</span>
+                                </div>
+                            </div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>04/04/2023</span>
+                            </div>
+                        </div>
+                        <div class="review-content">
+                            <h4>Sempre peço quando recebo amigos</h4>
+                            <p>As porções são generosas e o sabor é incrível. Já virou tradição! Só acho que poderiam melhorar um pouco o tempo de entrega nos finais de semana.</p>
+                        </div>
+                        <div class="review-actions">
+                            <button class="btn btn-primary"><i class="fas fa-reply"></i> Responder</button>
+                            <button class="btn btn-secondary"><i class="fas fa-thumbs-up"></i> Útil</button>
+                            <button class="btn btn-secondary"><i class="fas fa-flag"></i> Denunciar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Avaliação 3 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-author">
+                                <img src="../assets/client3.jpg" alt="João Santos">
+                                <div class="author-info">
+                                    <h4>João Santos</h4>
+                                    <span>Pedido #1540</span>
+                                </div>
+                            </div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>03/04/2023</span>
+                            </div>
+                        </div>
+                        <div class="review-content">
+                            <h4>Muito bom, mas teve um problema</h4>
+                            <p>O sabor da comida é excelente, mas veio faltando um dos acompanhamentos. O atendimento resolveu rapidamente, oferecendo desconto no próximo pedido.</p>
+                        </div>
+                        <div class="review-actions">
+                            <button class="btn btn-primary"><i class="fas fa-reply"></i> Responder</button>
+                            <button class="btn btn-secondary"><i class="fas fa-thumbs-up"></i> Útil</button>
+                            <button class="btn btn-secondary"><i class="fas fa-flag"></i> Denunciar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Paginação -->
+                <div class="pagination">
+                    <button class="page-btn disabled"><i class="fas fa-chevron-left"></i></button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Rodapé Admin -->
+    <footer class="admin-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-copyright">
+                    &copy; 2023 Churrasquinho do Cumpadi - Painel Administrativo
+                </div>
+                <div class="footer-links">
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Ajuda</a>
+                </div>
+                <div class="footer-version">
+                    Versão 2.1.4
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="admin.js"></script>
+</body>
+
+</html>

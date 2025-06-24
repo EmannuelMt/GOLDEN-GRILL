@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cardápio completo do Churrasquinho do Cumpadi - O melhor churrasco da região">
+    <meta name="keywords" content="cardápio, churrasco, delivery, carnes, porções, bebidas">
+    <title>Cardápio Completo | Golden Grill</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+     <link rel="stylesheet" href="css/cardapio.css">
+</head>
+
+<body>
+<!-- Cinematic Loading Screen -->
+<div class="loading-screen">
+    <div class="loading-background"></div>
+    
+    <div class="loading-content">
+      <div class="loading-logo-container">
+        <img src="faz uma logo GOLDEN GRILL.jpeg" alt="Golden Grill" class="loading-logo">
+      </div>
+      
+      <div class="quantum-loader">
+        <div class="quantum-dot"></div>
+        <div class="quantum-dot"></div>
+        <div class="quantum-dot"></div>
+        <div class="quantum-dot"></div>
+      </div>
+      
+      <p class="loading-text">Iniciando experiência gastronômica</p>
+    </div>
+  </div>
+
+    <!-- Barra de Navegação -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="faz uma logo GOLDEN GRILL.jpeg" alt="Golden Grill" width="80">
+                </a>
+            </div>
+            
+            <nav class="main-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cardapio.html" class="active">Cardápio</a></li>
+                    <li><a href="promoçoes.html">Promoções</a></li>
+                    <li><a href="delivery.html">Delivery</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="perfil.html">Perfil</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="admin.html">admin</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions">
+                <button class="cart-btn" id="cartButton">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sacola de Compras -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Seu Pedido</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Itens serão adicionados dinamicamente aqui -->
+            <div class="empty-cart">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Sua sacola está vazia</p>
+            </div>
+        </div>
+        <div class="cart-summary">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-price">R$ 0,00</span>
+            </div>
+            <button class="btn btn-primary btn-checkout">Finalizar Pedido</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Hero Banner do Cardápio -->
+    <section class="hero-menu">
+        <div class="container">
+            <div class="hero-menu-content">
+                <h1>Cardápio Completo</h1>
+                <p>Conheça todas as nossas delícias</p>
+                
+                <!-- Barra de Pesquisa -->
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Buscar no cardápio...">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtros de Produtos -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label for="categoryFilter">Categoria:</label>
+                    <select id="categoryFilter" class="filter-select">
+                        <option value="all">Todas Categorias</option>
+                        <option value="carnes">Carnes</option>
+                        <option value="porcoes">Porções</option>
+                        <option value="acompanhamentos">Acompanhamentos</option>
+                        <option value="bebidas">Bebidas</option>
+                        <option value="jantinha">Jantinha</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="priceFilter">Preço:</label>
+                    <select id="priceFilter" class="filter-select">
+                        <option value="all">Todos os Preços</option>
+                        <option value="0-30">Até R$ 30</option>
+                        <option value="30-60">R$ 30 - R$ 60</option>
+                        <option value="60-100">R$ 60 - R$ 100</option>
+                        <option value="100+">Acima de R$ 100</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="sortBy">Ordenar por:</label>
+                    <select id="sortBy" class="filter-select">
+                        <option value="popular">Mais Populares</option>
+                        <option value="price-asc">Preço: Menor para Maior</option>
+                        <option value="price-desc">Preço: Maior para Menor</option>
+                        <option value="name">Ordem Alfabética</option>
+                    </select>
+                </div>
+                
+                <button class="btn btn-secondary reset-filters">Limpar Filtros</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cardápio Completo -->
+    <section class="full-menu-section">
+        <div class="container">
+            <!-- Seção de Carnes -->
+            <div class="menu-category" id="carnes">
+                <div class="category-header">
+                    <h2>Carnes Premium</h2>
+                    <p>Selecionadas e preparadas com maestria</p>
+                </div>
+                
+                <div class="menu-items-grid">
+                    <!-- Item 1 -->
+                    <div class="menu-item" data-price="89.90">
+                        <div class="item-image">
+                            <img src="assets/Picanha-na-brasa-1024x585.webp" alt="Picanha Premium">
+                            <span class="item-badge">Mais pedido</span>
+                        </div>
+                        <div class="item-info">
+                            <h3>Picanha Premium</h3>
+                            <p>Picanha grelhada no ponto perfeito, servida com farofa e vinagrete.</p>
+                            <div class="item-price">R$ 89,90</div>
+                            <button class="btn btn-add">Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="menu-item" data-price="75.50">
+                        <div class="item-image">
+                            <img src="assets/Costela-no-bafo-na-panela-de-pressao-Minhas-Receitas.jpg" alt="Costela Bovino">
+                        </div>
+                        <div class="item-info">
+                            <h3>Costela Bovino</h3>
+                            <p>Costela assada lentamente por 8 horas, extremamente macia.</p>
+                            <div class="item-price">R$ 75,50</div>
+                            <button class="btn btn-add">Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="menu-item" data-price="65.90">
+                        <div class="item-image">
+                            <img src="assets/Maminha Suína assada.jpeg" alt="Maminha Suína">
+                        </div>
+                        <div class="item-info">
+                            <h3>Maminha Suína</h3>
+                            <p>Corte suculento de maminha, temperada com especiarias especiais.</p>
+                            <div class="item-price">R$ 65,90</div>
+                            <button class="btn btn-add">Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="menu-item" data-price="82.00">
+                        <div class="item-image">
+                            <img src="assets/Contra filé grelhado no ponto que você preferir, com tempero caseiro.jpeg" alt="Contra Filé">
+                            <span class="item-badge">Novidade</span>
+                        </div>
+                        <div class="item-info">
+                            <h3>Contra Filé</h3>
+                            <p>Contra filé grelhado no ponto que você preferir, com tempero caseiro.</p>
+                            <div class="item-price">R$ 82,00</div>
+                            <button class="btn btn-add">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção de Frango -->
+            <div class="menu-category" id="frango">
+                <div class="category-header">
+                    <h2>Frango</h2>
+                    <p>Receitas especiais com frango selecionado</p>
+                </div>
+                
+                <div class="menu-items-grid">
+                    <!-- Item 1 -->
+                    <div class="menu-item" data-price="45.90">
+                        <div class="item-image">
+                            <img src="assets/Receitas especiais com frango selecionado.jpeg" alt="Frango Assado">
+                        </div>
+                        <div class="item-info">
+                            <h3>Frango Assado</h3>
+                            <p>Frango inteiro assado na brasa com tempero especial da casa.</p>
+                            <div class="item-price">R$ 45,90</div>
+                            <button class="btn btn-add">Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="menu-item" data-price="38.50">
+                        <div class="item-image">
+                            <img src="assets/Asinhas de frango temperadas e grelhadas, crocantes por fora e suculentas por dentro.jpeg" alt="Asa de Frango">
+                        </div>
+                        <div class="item-info">
+                            <h3>Asa de Frango</h3>
+                            <p>Asinhas de frango temperadas e grelhadas, crocantes por fora e suculentas por dentro.</p>
+                            <div class="item-price">R$ 38,50</div>
+                            <button class="btn btn-add">Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="menu-item" data-price="42.00">
+                        <div class="item-image">
+                            <img src="assets/Corações de frango grelhados no espeto, temperados com alho e ervas.jpeg" alt="Coração de Frango">
+                            <span class="item-badge">Mais pedido</span>
+                        </div>
+                        <div class="item-info">
+                            <h3>Coração de Frango</h3>
+                            <p>Corações de frango grelhados no espeto, temperados com alho e ervas.</p>
+                            <div class="item-price">R$ 42,00</div>
+                            <button class="btn btn-add">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção de Porções -->
+            <div class="menu-category" id="porcoes">
+                <div class="category-header">
+                    <h2>Porções</h2>
+                    <p>Para compartilhar com os amigos</p>
+                </div>
+                
+                <div class="menu-items-grid">
+                    <!-- Item 1 -->
+                    <div class="menu-item" data-price="55.90">
+                        <div class="item-image">
+                            <img src="assets/400g de carne bovina selecionada, cortada em tiras e grelhada..jpeg" alt="Porção de Carne">
+                        </div>
+                        <div class="item-info">
+                            <h3>Porção de Carne</h3>
+                            <p>400g de carne bovina selecionada, cortada em tiras e grelhada.</p>
+                            <div class="item-price">R$ 55,90</div>
+                            <button class="btn btn-add">Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="menu-item" data-price="48.50">
+                        <div class="item-image">
+                            <img src="assets/400g de filé de frango grelhado, temperado com ervas finas.jpeg" alt="Porção de Frango">
+                        </div>
+                        <div class="item-info">
+                            <h3>Porção de Frango</h3>
+                            <p>400g de filé de frango grelhado, temperado com ervas finas.</p>
+                            <div class="item-price">R$ 48,50</div>
+                            <button class="btn btn-add">Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="menu-item" data-price="65.00">
+                        <div class="item-image">
+                            <img src="assets/300g de carne bovina + 300g de frango + 200g de linguiça assada, perfeita para grupos..jpeg" alt="Porção Mista">
+                            <span class="item-badge">Recomendado</span>
+                        </div>
+                        <div class="item-info">
+                            <h3>Porção Mista</h3>
+                            <p>300g de carne bovina + 300g de frango + 200g de linguiça, perfeita para grupos.</p>
+                            <div class="item-price">R$ 65,00</div>
+                            <button class="btn btn-add">Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="menu-item" data-price="35.90">
+                        <div class="item-image">
+                            <img src="assets/500g de linguiça toscana caseira, grelhada na brasa..jpeg" alt="Porção de Linguiça">
+                        </div>
+                        <div class="item-info">
+                            <h3>Porção de Linguiça</h3>
+                            <p>500g de linguiça toscana caseira, grelhada na brasa.</p>
+                            <div class="item-price">R$ 35,90</div>
+                            <button class="btn btn-add">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção de Acompanhamentos -->
+            <div class="menu-category" id="acompanhamentos">
+                <div class="category-header">
+                    <h2>Acompanhamentos</h2>
+                    <p>Para complementar seu churrasco</p>
+                </div>
+                
+                <div class="acompanhamentos-grid">
+                    <!-- Item 1 -->
+                    <div class="acompanhamento-item" data-price="12.90">
+                        <div class="acompanhamento-image">
+                            <img src="assets/farofa-de-natal.webp" alt="Farofa de Bacon">
+                        </div>
+                        <div class="acompanhamento-info">
+                            <h3>Farofa de Bacon</h3>
+                            <div class="acompanhamento-price">R$ 12,90</div>
+                            <button class="btn btn-add">Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="acompanhamento-item" data-price="10.50">
+                        <div class="acompanhamento-image">
+                            <img src="assets/b9c495b17bc28a44ffb50c55572ed63-l.webp" alt="Vinagrete">
+                        </div>
+                        <div class="acompanhamento-info">
+                            <h3>Vinagrete</h3>
+                            <div class="acompanhamento-price">R$ 10,50</div>
+                            <button class="btn btn-add">Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="acompanhamento-item" data-price="14.90">
+                        <div class="acompanhamento-image">
+                            <img src="assets/Arroz-branco-1s.jpg" alt="Arroz Branco">
+                        </div>
+                        <div class="acompanhamento-info">
+                            <h3>Arroz Branco</h3>
+                            <div class="acompanhamento-price">R$ 14,90</div>
+                            <button class="btn btn-add">Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="acompanhamento-item" data-price="15.50">
+                        <div class="acompanhamento-image">
+                            <img src="assets/Feijao-tropeiro.webp" alt="Feijão Tropeiro">
+                        </div>
+                        <div class="acompanhamento-info">
+                            <h3>Feijão Tropeiro</h3>
+                            <div class="acompanhamento-price">R$ 15,50</div>
+                            <button class="btn btn-add">Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 5 -->
+                    <div class="acompanhamento-item" data-price="18.90">
+                        <div class="acompanhamento-image">
+                            <img src="assets/Purê de Batata.jpeg" alt="Purê de Batata">
+                        </div>
+                        <div class="acompanhamento-info">
+                            <h3>Purê de Batata</h3>
+                            <div class="acompanhamento-price">R$ 18,90</div>
+                            <button class="btn btn-add">Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 6 -->
+                    <div class="acompanhamento-item" data-price="16.50">
+                        <div class="acompanhamento-image">
+                            <img src="assets/Vinagrete.jpeg" alt="Salada Verde">
+                        </div>
+                        <div class="acompanhamento-info">
+                            <h3>Salada Verde</h3>
+                            <div class="acompanhamento-price">R$ 16,50</div>
+                            <button class="btn btn-add">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção de Bebidas -->
+            <div class="menu-category" id="bebidas">
+                <div class="category-header">
+                    <h2>Bebidas</h2>
+                    <p>Para acompanhar seu churrasco</p>
+                </div>
+                
+                <div class="bebidas-grid">
+                    <!-- Item 1 -->
+                    <div class="bebida-item" data-price="8.90">
+                        <div class="bebida-image">
+                            <img src="assets/Cerveja Artesanal.jpeg" alt="Cerveja Artesanal">
+                        </div>
+                        <div class="bebida-info">
+                            <span class="bebida-type alcoolica">Alcoólica</span>
+                            <h3>Cerveja Artesanal</h3>
+                            <div class="bebida-price">R$ 8,90</div>
+                            <button class="btn btn-add">Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="bebida-item" data-price="7.50">
+                        <div class="bebida-image">
+                            <img src="assets/Design-sem-nome-10.png" alt="Refrigerante Lata">
+                        </div>
+                        <div class="bebida-info">
+                            <span class="bebida-type refrigerante">Refrigerante</span>
+                            <h3>Refrigerante Lata</h3>
+                            <div class="bebida-price">R$ 7,50</div>
+                            <button class="btn btn-add">Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="bebida-item" data-price="12.90">
+                        <div class="bebida-image">
+                            <img src="assets/vinho-tinto-principais-caracteristicas.jpg.webp" alt="Vinho Tinto">
+                        </div>
+                        <div class="bebida-info">
+                            <span class="bebida-type alcoolica">Alcoólica</span>
+                            <h3>Vinho Tinto</h3>
+                            <div class="bebida-price">R$ 12,90</div>
+                            <button class="btn btn-add">Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="bebida-item" data-price="6.90">
+                        <div class="bebida-image">
+                            <img src="assets/Suco Natural.jpeg" alt="Suco Natural">
+                        </div>
+                        <div class="bebida-info">
+                            <span class="bebida-type suco">Suco</span>
+                            <h3>Suco Natural</h3>
+                            <div class="bebida-price">R$ 6,90</div>
+                            <button class="btn btn-add">Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 5 -->
+                    <div class="bebida-item" data-price="5.50">
+                        <div class="bebida-image">
+                            <img src="assets/como-e-feito-o-envase-de-agua-mineral.jpg" alt="Água Mineral">
+                        </div>
+                        <div class="bebida-info">
+                            <h3>Água Mineral</h3>
+                            <div class="bebida-price">R$ 5,50</div>
+                            <button class="btn btn-add">Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 6 -->
+                    <div class="bebida-item" data-price="9.90">
+                        <div class="bebida-image">
+                            <img src="assets/11142-heineken-slee-lata-350ml-12un.20250328143649.png" alt="Cerveja Lata">
+                        </div>
+                        <div class="bebida-info">
+                            <span class="bebida-type alcoolica">Alcoólica</span>
+                            <h3>Cerveja Lata</h3>
+                            <div class="bebida-price">R$ 9,90</div>
+                            <button class="btn btn-add">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção de Jantinha -->
+            <div class="menu-category" id="jantinha">
+                <div class="category-header">
+                    <h2>Jantinha</h2>
+                    <p>Refeições completas e equilibradas</p>
+                </div>
+                
+                <div class="jantinha-grid">
+                    <!-- Item 1 -->
+                    <div class="jantinha-item" data-price="29.90">
+                        <div class="jantinha-image">
+                            <img src="assets/jantinha completa Arroz, feijão, frango grelhado, salada e purê de batata (1).jpeg" alt="Jantinha Completa">
+                        </div>
+                        <div class="jantinha-info">
+                            <h3>Jantinha Completa</h3>
+                            <p>Arroz, feijão, frango grelhado, salada e purê de batata</p>
+                            <div class="jantinha-price">R$ 29,90</div>
+                            <button class="btn btn-add">Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="jantinha-item" data-price="32.50">
+                        <div class="jantinha-image">
+                            <img src="assets/jantinha excutiva Arroz integral, feijão preto, carne grelhada, legumes e salada_.jpeg" alt="Jantinha Executiva">
+                        </div>
+                        <div class="jantinha-info">
+                            <h3>Jantinha Executiva</h3>
+                            <p>Arroz integral, feijão preto, carne grelhada, legumes e salada</p>
+                            <div class="jantinha-price">R$ 32,50</div>
+                            <button class="btn btn-add">Adicionar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="jantinha-item" data-price="27.90">
+                        <div class="jantinha-image">
+                            <img src="assets/jantinha fitness Arroz integral, frango grelhado, batata doce e salada verde.jpeg" alt="Jantinha Fitness">
+                        </div>
+                        <div class="jantinha-info">
+                            <h3>Jantinha Fitness</h3>
+                            <p>Arroz integral, frango grelhado, batata doce e salada verde</p>
+                            <div class="jantinha-price">R$ 27,90</div>
+                            <button class="btn btn-add">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA Final -->
+            <div class="menu-cta-final">
+                <h3>Gostou do nosso cardápio?</h3>
+                <p>Faça seu pedido agora mesmo e receba em casa</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/551112345678" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Pedir pelo WhatsApp
+                    </a>
+                    <a href="tel:+551112345678" class="btn btn-primary">
+                        <i class="fas fa-phone"></i> Ligar para pedir
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/faz uma logo GOLDEN GRILL.jpeg" alt="Golden Grill" width="70">
+                    <p>O melhor churrasco da região desde 2010</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Cardápio</h4>
+                        <ul>
+                            <li><a href="#carnes">Carnes</a></li>
+                            <li><a href="#porcoes">Porções</a></li>
+                            <li><a href="#bebidas">Bebidas</a></li>
+                            <li><a href="#jantinha">Jantinha</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Institucional</h4>
+                        <ul>
+                            <li><a href="#">Sobre Nós</a></li>
+                            <li><a href="#">Nossa História</a></li>
+                            <li><a href="#">Trabalhe Conosco</a></li>
+                            <li><a href="#">Política de Privacidade</a></li>
+                            <li><a href="#">Termos de Serviço</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Contato</h4>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt"></i> Rua do Churrasco, 123 - Centro</li>
+                            <li><i class="fas fa-phone"></i> (11) 1234-5678</li>
+                            <li><i class="fas fa-envelope"></i> contato@churrasquinhodocumpadi.com</li>
+                            <li><i class="fas fa-clock"></i> Ter-Dom: 11h às 23h</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Siga-nos</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    
+                    <div class="payment-methods">
+                        <h4>Formas de Pagamento</h4>
+                        <div class="payment-icons">
+                            <i class="fab fa-cc-visa" title="Visa"></i>
+                            <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                            <i class="fab fa-cc-amex" title="American Express"></i>
+                            <i class="fab fa-cc-paypal" title="PayPal"></i>
+                            <i class="fas fa-money-bill-wave" title="Dinheiro"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Churrasquinho do Cumpadi. Todos os direitos reservados.</p>
+                <p>Desenvolvido com <i class="fas fa-heart" style="color: var(--primary);"></i> por Sua Agência</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/551112345678" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="js/cardapio.js"></script>
+   
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Promoções imperdíveis do Churrasquinho do Cumpadi - O melhor churrasco da região">
+    <title>Promoções | Churrasquinho do Cumpadi</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/promoçoes.css">
+</head>
+<body>
+    <!-- Barra de Navegação -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="faz uma logo GOLDEN GRILL.jpeg"GOLDEN GRILL" width="80">
+                </a>
+            </div>
+            
+            <nav class="main-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cardapio.html">Cardápio</a></li>
+                    <li><a href="jantinha.html">Jantinha</a></li>
+                    <li><a href="promocoes.html" class="active">Promoções</a></li>
+                    <li><a href="delivery.html">Delivery</a></li>
+                    <li><a href="perfil.html">Perfil</a></li>
+                    <li><a href="auth.html">Login</a></li>
+                    <li><a href="admin.html">admin</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions">
+                <button class="cart-btn" id="cartButton">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sacola de Compras -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Seu Pedido</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Itens serão adicionados dinamicamente aqui -->
+            <div class="empty-cart">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Sua sacola está vazia</p>
+            </div>
+        </div>
+        <div class="cart-summary">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-price">R$ 0,00</span>
+            </div>
+            <button class="btn btn-primary btn-checkout">Finalizar Pedido</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Banner de Promoções -->
+    <section class="hero-promo">
+        <div class="container">
+            <div class="hero-promo-content">
+                <h1>Promoções Imperdíveis</h1>
+                <p>Descontos exclusivos para você aproveitar</p>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <span class="days">00</span>
+                        <span class="countdown-label">Dias</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="hours">00</span>
+                        <span class="countdown-label">Horas</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="minutes">00</span>
+                        <span class="countdown-label">Min</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="seconds">00</span>
+                        <span class="countdown-label">Seg</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtros de Promoções -->
+    <section class="promo-filters">
+        <div class="container">
+            <div class="filters-container">
+                <button class="filter-btn active" data-filter="all">Todas</button>
+                <button class="filter-btn" data-filter="combo">Combos</button>
+                <button class="filter-btn" data-filter="dia">Dia da Semana</button>
+                <button class="filter-btn" data-filter="happyhour">Happy Hour</button>
+                <button class="filter-btn" data-filter="especial">Especiais</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promoções em Destaque -->
+    <section class="featured-promo">
+        <div class="container">
+            <div class="promo-card featured" data-category="especial">
+                <div class="promo-badge">Destaque</div>
+                <div class="promo-image">
+                </div>
+                <div class="promo-content">
+                    <div class="promo-header">
+                        <h3>Churrasco Completo para 4 Pessoas</h3>
+                        <div class="promo-price">
+                            <span class="old-price">R$ 189,90</span>
+                            <span class="current-price">R$ 149,90</span>
+                        </div>
+                    </div>
+                    <p>Carnes selecionadas, acompanhamentos completos e bebidas para toda a família aproveitar</p>
+                    <div class="promo-meta">
+                        <span class="promo-tag"><i class="fas fa-tag"></i> 21% OFF</span>
+                        <span class="promo-time"><i class="fas fa-clock"></i> Válido até 30/06</span>
+                    </div>
+                    <button class="btn btn-primary btn-block btn-promo">Aproveitar Oferta</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lista de Promoções -->
+    <section class="promo-list">
+        <div class="container">
+            <h2 class="section-title">Todas as Promoções</h2>
+            
+            <div class="promo-grid">
+                <!-- Promoção 1 -->
+                <div class="promo-card" data-category="combo">
+                    <div class="promo-image">
+                    </div>
+                    <div class="promo-content">
+                        <h3>Combo Família</h3>
+                        <div class="promo-price">
+                            <span class="old-price">R$ 129,90</span>
+                            <span class="current-price">R$ 99,90</span>
+                        </div>
+                        <p>2 Carnes + 3 Acompanhamentos + 2 Bebidas</p>
+                        <div class="promo-meta">
+                            <span class="promo-tag"><i class="fas fa-tag"></i> 23% OFF</span>
+                            <span class="promo-time"><i class="fas fa-clock"></i> Válido às segundas</span>
+                        </div>
+                        <button class="btn btn-add">Adicionar</button>
+                    </div>
+                </div>
+
+                <!-- Promoção 2 -->
+                <div class="promo-card" data-category="happyhour">
+                    <div class="promo-image">
+                    </div>
+                    <div class="promo-content">
+                        <h3>Happy Hour</h3>
+                        <div class="promo-price">
+                            <span class="old-price">R$ 48,90</span>
+                            <span class="current-price">R$ 29,90</span>
+                        </div>
+                        <p>Porção de linguiça + 2 cervejas artesanais</p>
+                        <div class="promo-meta">
+                            <span class="promo-tag"><i class="fas fa-tag"></i> 39% OFF</span>
+                            <span class="promo-time"><i class="fas fa-clock"></i> 17h-20h</span>
+                        </div>
+                        <button class="btn btn-add">Adicionar</button>
+                    </div>
+                </div>
+
+                <!-- Promoção 3 -->
+                <div class="promo-card" data-category="dia">
+                    <div class="promo-badge">Quarta</div>
+                    <div class="promo-image">
+                    </div>
+                    <div class="promo-content">
+                        <h3>Quarta do Costelão</h3>
+                        <div class="promo-price">
+                            <span class="old-price">R$ 79,90</span>
+                            <span class="current-price">R$ 59,90</span>
+                        </div>
+                        <p>Costela bovina + 2 acompanhamentos à escolha</p>
+                        <div class="promo-meta">
+                            <span class="promo-tag"><i class="fas fa-tag"></i> 25% OFF</span>
+                            <span class="promo-time"><i class="fas fa-clock"></i> Apenas quartas</span>
+                        </div>
+                        <button class="btn btn-add">Adicionar</button>
+                    </div>
+                </div>
+
+                <!-- Promoção 4 -->
+                <div class="promo-card" data-category="combo">
+                    <div class="promo-image">
+                    </div>
+                    <div class="promo-content">
+                        <h3>Combo Casal</h3>
+                        <div class="promo-price">
+                            <span class="old-price">R$ 89,90</span>
+                            <span class="current-price">R$ 69,90</span>
+                        </div>
+                        <p>2 Carnes + 2 Acompanhamentos + 1 Bebida</p>
+                        <div class="promo-meta">
+                            <span class="promo-tag"><i class="fas fa-tag"></i> 22% OFF</span>
+                            <span class="promo-time"><i class="fas fa-clock"></i> Válido até 15/07</span>
+                        </div>
+                        <button class="btn btn-add">Adicionar</button>
+                    </div>
+                </div>
+
+                <!-- Promoção 5 -->
+                <div class="promo-card" data-category="happyhour">
+                    <div class="promo-image">
+                    </div>
+                    <div class="promo-content">
+                        <h3>Happy Hour VIP</h3>
+                        <div class="promo-price">
+                            <span class="old-price">R$ 119,90</span>
+                            <span class="current-price">R$ 89,90</span>
+                        </div>
+                        <p>Picanha + Queijo Coalho + 4 cervejas premium</p>
+                        <div class="promo-meta">
+                            <span class="promo-tag"><i class="fas fa-tag"></i> 25% OFF</span>
+                            <span class="promo-time"><i class="fas fa-clock"></i> 18h-21h</span>
+                        </div>
+                        <button class="btn btn-add">Adicionar</button>
+                    </div>
+                </div>
+
+                <!-- Promoção 6 -->
+                <div class="promo-card" data-category="dia">
+                    <div class="promo-badge">Sexta</div>
+                    <div class="promo-image">
+                    </div>
+                    <div class="promo-content">
+                        <h3>Sexta da Picanha</h3>
+                        <div class="promo-price">
+                            <span class="old-price">R$ 69,90</span>
+                            <span class="current-price">R$ 49,90</span>
+                        </div>
+                        <p>Picanha argentina + vinagrete especial</p>
+                        <div class="promo-meta">
+                            <span class="promo-tag"><i class="fas fa-tag"></i> 29% OFF</span>
+                            <span class="promo-time"><i class="fas fa-clock"></i> Apenas sextas</span>
+                        </div>
+                        <button class="btn btn-add">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h3>Receba nossas promoções</h3>
+                    <p>Cadastre-se e receba ofertas exclusivas no seu e-mail</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Seu melhor e-mail" required>
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/faz uma logo GOLDEN GRILL.jpeg" alt="GOLDEN GRILL" width="180">
+                    <p>O melhor churrasco da região desde 2010</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Cardápio</h4>
+                        <ul>
+                            <li><a href="cardapio.html#carnes">Carnes</a></li>
+                            <li><a href="cardapio.html#frango">Frango</a></li>
+                            <li><a href="cardapio.html#porcoes">Porções</a></li>
+                            <li><a href="cardapio.html#bebidas">Bebidas</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Institucional</h4>
+                        <ul>
+                            <li><a href="sobre.html">Sobre Nós</a></li>
+                            <li><a href="contato.html">Contato</a></li>
+                            <li><a href="delivery.html">Delivery</a></li>
+                            <li><a href="promocoes.html">Promoções</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Contato</h4>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt"></i> Rua do Churrasco, 123 - Centro</li>
+                            <li><i class="fas fa-phone"></i> (11) 1234-5678</li>
+                            <li><i class="fas fa-envelope"></i> contato@churrasquinhodocumpadi.com</li>
+                            <li><i class="fas fa-clock"></i> Ter-Dom: 11h às 23h</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Siga-nos</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Churrasquinho do Cumpadi. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/551112345678" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="js/promoçoes.js"></script>
+</body>
+</html>
