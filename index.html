@@ -1,594 +1,452 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="no-js">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="goldengrill - O melhor churrasco delivery da região. Peça agora e experimente a qualidade premium!">
-    <meta name="author" content="GOLDEN GRILL">
-    <meta name="keywords" content="churrasco, delivery, comida, churrascaria, porções, bebidas">
-    <title>GOLDEN GRILL</title>
+    <meta name="description" content="Golden Grill - Churrasco Premium Delivery">
+    <title>Golden Grill - Churrasco Premium</title>
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
-        rel="stylesheet">
+    
+    <!-- Pré-carregamento de recursos críticos -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style">
+    <link rel="preload" href="css/main.css" as="style">
+    
+    <!-- Fontes e ícones -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
-
+    
+    <!-- Pré-carregamento de imagens críticas -->
+    <link rel="preload" href="assets/hero-bg.jpg" as="image">
+    <link rel="preload" href="assets/logo-golden-grill.png" as="image">
 </head>
-<!-- Cinematic Loading Screen -->
-<div class="loading-screen">
-    <div class="loading-background"></div>
 
-    <div class="loading-content">
-        <div class="loading-logo-container">
-            <img src="assets/faz uma logo GOLDEN GRILL.jpeg" alt="GOLDEN GRILL" class="loading-logo">
-        </div>
-
-        <div class="quantum-loader">
-            <div class="quantum-dot"></div>
-            <div class="quantum-dot"></div>
-            <div class="quantum-dot"></div>
-            <div class="quantum-dot"></div>
-        </div>
-
-        <p class="loading-text">Iniciando experiência gastronômica</p>
-    </div>
-</div>
-<!-- Barra de Navegação -->
-<header class="navbar">
-    <div class="container">
-        <div class="logo">
-            <a href="index.html">
-                <img src="assets/faz uma logo GOLDEN GRILL.jpeg" GOLDEN GRILL" width="70">
-            </a>
-        </div>
-
-        <nav class="main-menu">
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="cardapio.html">Cardápio</a></li>
-                <li><a href="promoçoes.html">Promoções</a></li>
-                <li><a href="delivery.html">Delivery</a></li>
-                <li><a href="perfil.html">Perfil</a></li>
-                <li><a href="contato.html">Contato</a></li>>
-                <li><a href="cria conta.html">Login</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <body>
-
-
-        </div>
-        </div>
-</header>
-
-<!-- Hero Banner -->
-<section id="home" class="hero">
-    <div class="hero-slider">
-        <div class="slide active" style="background-image: url('assets/loja\ de\ churrasco\ grande\ \(2\).jpeg');">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>O melhor churrasco da região</h1>
-                    <p>Delivery rápido e atendimento de qualidade</p>
-                    <div class="hero-cta">
-                        <a href="cardapio.html" class="btn btn-primary">Ver Cardápio</a>
-                        <a href="https://wa.me/551112345678" class="btn btn-whatsapp">
-                            <i class="fab fa-whatsapp"></i> Pedir pelo WhatsApp
-                        </a>
-                    </div>
-                </div>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">
+                <img src="assets/logo-golden-grill.png" alt="Golden Grill" width="180" height="60">
+            </div>
+            <div class="preloader-progress">
+                <div class="preloader-progress-bar"></div>
             </div>
         </div>
-        <!-- Slides adicionais podem ser adicionados aqui -->
     </div>
 
-    <div class="hero-features">
+    <!-- Cursor Personalizado -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Barra de Navegação -->
+    <header class="navbar" id="navbar">
         <div class="container">
-            <div class="feature-item">
-                <i class="fas fa-shipping-fast"></i>
-                <span>Entrega Rápida</span>
+            <div class="logo">
+                <a href="index.html" aria-label="Golden Grill - Página Inicial">
+                    <img src="assets/logo-golden-grill.png" alt="Golden Grill" width="180" height="60" class="logo-img">
+                </a>
             </div>
-            <div class="feature-item">
-                <i class="fas fa-utensils"></i>
-                <span>Comida Caseira</span>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-percentage"></i>
-                <span>Promoções Diárias</span>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-credit-card"></i>
-                <span>Vários Pagamentos</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Sobre Nós -->
-<section id="sobre" class="about-section">
-    <div class="container">
-        <div class="section-header">
-            <h2>Nossa História</h2>
-            <p>Conheça um pouco sobre o Churrasquinho do Cumpadi</p>
-        </div>
-
-        <div class="about-content">
-            <div class="about-image">
-                <img src="assets/loja de churrasco grande (1).jpeg" alt="Interior do Churrasquinho do Cumpadi"
-                    class="img-fluid">
-            </div>
-            <div class="about-text">
-                <h3>Desde 2010 levando qualidade para sua mesa</h3>
-                <p>Churrascaria Golden Grill é mais do que um restaurante — é um espetáculo gastronômico onde tradição
-                    e inovação se encontram ao redor do fogo. Fundada por Diego Menezes, um gaúcho apaixonado pela arte
-                    do churrasco, a casa se tornou um verdadeiro templo da carne, combinando técnicas ancestrais com
-                    padrões internacionais de qualidade.</p>
-                    <p>A Origem do Fogo Dourado
-
-                        Diego Menezes, um gaúcho de alma e coração, herdou de seu avó não apenas as técnicas ancestrais
-                        do
-                        churrasco, mas uma obsessão: criar o melhor ponto de carne do mundo. Sua jornada o levou das
-                        estâncias do Pampa aos melhores restaurantes de Buenos Aires, Texas e até o Japão, onde aprendeu
-                        os
-                        segredos da wagyu.
-
-                        Ao voltar, trouxe consigo:
-
-                        Uma seleção de cortes especiais maturados a perfeição
-
-                        A lendária "Brasa Dourada" - uma mistura secreta de lenhas nobres
-
-                        O "Tempero de Ouro", com 21 especiarias raras
-
-                        A Experiência Única
-
-                        Na GOLDEN GRILL, o ritual começa no salão principal, onde enormes espetos giratórios exibem:
-
-                        Picanhas que brilham como ouro sob a luz
-
-                        Costelas que desmancham ao toque do garfo
-
-                        Cortes exclusivos como o "Tomahawk de Ouro" (55 dias de maturação)
-
-                        Os passadores, vestidos com trajes de couro nobre, oferecem:
-
-                        O "Tour de Carnes" - uma degustação guiada pelos melhores cortes
-
-                        O "Momento Ouro" - quando o chef prepara seu prato especial à mesa
-
-                        A "Prova Cega" - desafio para identificar cortes premium
-
-                        Reconhecimento Mundial
-
-                        Em apenas 5 anos, a GOLDEN GRILL conquistou:
-
-                        3 estrelas no "Guia Carnívoro Global"
-
-                        Prêmio "Espeto de Ouro" por 3 anos consecutivos
-
-                        Visitas de chefs como Gordon Ramsay, que declarou:
-                        "Esta picanha mudou minha concepção de churrasco perfeito"
-
-                        O Legado
-
-                        Hoje, com casas em:
-
-                        Rio de Janeiro (a matriz, com seu fogão a lenha de 5 toneladas)
-
-                        Dubai (onde serve halal gourmet)
-
-                        Tóquio (com fusão de técnicas japonesas)
-
-                        A GOLDEN GRILL mantém sua promessa:
-                        "Servir não apenas carne, mas memórias douradas que permanecem no paladar e no coração."
-
-                        Seu slogan ecoa pelos salões:
-                        🔥 "Entre como convidado, saia como parte da lenda!"
-
-                        E assim, a cada noite, o fogo sagrado continua a transformar simples cortes em experiências
-                        douradas, perpetuando a magia do verdadeiro churrasco de excelência.
-
-                    </p>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">13+</span>
-                            <span class="stat-label">Anos no mercado</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">10.000+</span>
-                            <span class="stat-label">Clientes satisfeitos</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">50+</span>
-                            <span class="stat-label">Itens no cardápio</span>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Cardápio -->
-<section id="cardapio" class="menu-section">
-    <div class="container">
-        <div class="section-header">
-            <h2>Nosso Cardápio</h2>
-            <p>Deliciosas opções para todos os gostos</p>
-        </div>
-
-        <div class="menu-categories">
-            <button class="category-btn active" data-category="destaques">Destaques</button>
-            <button class="category-btn" data-category="carnes">Carnes</button>
-            <button class="category-btn" data-category="porcoes">Porções</button>
-            <button class="category-btn" data-category="acompanhamentos">Acompanhamentos</button>
-            <button class="category-btn" data-category="bebidas">Bebidas</button>
-        </div>
-
-        <div class="menu-items">
-            <!-- Item 1 -->
-            <div class="menu-item" data-category="destaques,carnes">
-                <div class="item-image">
-                    <img src="assets/Picanha-na-brasa-1024x585.webp" alt="Picanha">
-                    <span class="item-badge">Mais pedido</span>
-                </div>
-                <div class="item-info">
-                    <h3>Picanha</h3>
-                    <p>Picanha premium grelhada no ponto perfeito, servida com farofa e vinagrete.</p>
-                    <div class="item-price">R$ 89,90</div>
-                    <button class="btn btn-add">Adicionar</button>
-                </div>
-            </div>
-
-            <!-- Item 2 -->
-            <div class="menu-item" data-category="destaques,porcoes">
-                <div class="item-image">
-                    <img src="assets/Costela-no-bafo-na-panela-de-pressao-Minhas-Receitas.jpg" alt="Porção de Costela">
-                </div>
-                <div class="item-info">
-                    <h3>Costela no Bafo</h3>
-                    <p>Deliciosa costela assada lentamente, servida com mandioca e molho barbecue.</p>
-                    <div class="item-price">R$ 75,00</div>
-                    <button class="btn btn-add">Adicionar</button>
-                </div>
-            </div>
-
-            <!-- Mais itens podem ser adicionados aqui -->
-        </div>
-
-        <div class="menu-cta">
-            <a href="cardapio.html" class="btn btn-secondary">Ver Cardápio Completo</a>
-        </div>
-    </div>
-</section>
-
-<!-- Promoções -->
-<section id="promocoes" class="promo-section">
-    <div class="container">
-        <div class="section-header">
-            <h2>Promoções Especiais</h2>
-            <p>Aproveite nossas ofertas por tempo limitado</p>
-        </div>
-
-        <div class="promo-cards">
-            <!-- Promo 1 -->
-            <div class="promo-card">
-                <div class="promo-badge">-20%</div>
-                <div class="promo-image">
-                    <img src="assets/combo familia Picanha + Frango + Linguiça + 4 acompanhamentos + 2 litros de refrigerante.jpeg"
-                        alt="Promoção 1">
-                </div>
-                <div class="promo-info">
-                    <h3>Combo Família</h3>
-                    <p>Picanha + Frango + Linguiça + 4 acompanhamentos + 2 litros de refrigerante</p>
-                    <div class="promo-price">
-                        <span class="old-price">R$ 149,90</span>
-                        <span class="new-price">R$ 119,90</span>
-                    </div>
-                    <button class="btn btn-primary">Pedir Agora</button>
-                </div>
-            </div>
-
-            <!-- Promo 2 -->
-            <div class="promo-card">
-                <div class="promo-badge">2x1</div>
-                <div class="promo-image">
-                    <img src="assets/Segunda Carnívora_ Todas as segundas, leve 2 porções de carne e pague por 1.jpeg"
-                        alt="Promoção 2">
-                </div>
-                <div class="promo-info">
-                    <h3>Segunda Carnívora</h3>
-                    <p>Todas as segundas, leve 2 porções de carne e pague por 1</p>
-                    <div class="promo-price">
-                        <span class="old-price">R$ 99,80</span>
-                        <span class="new-price">R$ 49,90</span>
-                    </div>
-                    <button class="btn btn-primary">Pedir Agora</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Delivery -->
-<section id="delivery" class="delivery-section">
-    <div class="container">
-        <div class="delivery-content">
-            <div class="delivery-text">
-                <h2>Delivery Rápido e Seguro</h2>
-                <p>Entregamos em toda a região em até 45 minutos ou sua comida é grátis*</p>
-                <ul class="delivery-features">
-                    <li><i class="fas fa-check-circle"></i> Embalagens térmicas</li>
-                    <li><i class="fas fa-check-circle"></i> Pagamento online seguro</li>
-                    <li><i class="fas fa-check-circle"></i> Rastreamento do pedido</li>
-                    <li><i class="fas fa-check-circle"></i> Entregadores treinados</li>
+            
+            <nav class="main-menu" id="mainMenu">
+                <ul>
+                    <li><a href="#home" class="nav-link active" data-text="Home">Home</a></li>
+                    <li><a href="#menu" class="nav-link" data-text="Cardápio">Cardápio</a></li>
+                    <li><a href="#promocoes" class="nav-link" data-text="Promoções">Promoções</a></li>
+                    <li><a href="#delivery" class="nav-link" data-text="Delivery">Delivery</a></li>
+                    <li><a href="login.html" class="nav-link" data-text="Login">Login</a></li>
+                    <li><a href="#contato" class="nav-link" data-text="Contato">Contato</a></li>
+                    <li class="nav-cta"><a href="#delivery" class="btn btn-primary btn-sm">Peça Agora</a></li>
                 </ul>
-                <div class="delivery-apps">
-                    <p>Baixe nosso app:</p>
-                    <a href="#" class="app-btn">
-                        <img src="assets/cria imagem de aplicativo de delivery de comida.jpeg"
-                            alt="Disponível no Google Play">
-                    </a>
-                    <a href="#" class="app-btn">
-                        <img src="assets/cria imagem de aplicativo de delivery de comida (1).jpeg"
-                            alt="Disponível na App Store">
-                    </a>
-                </div>
-            </div>
-            <div class="delivery-image">
-                <img src="assets/cria imagem de aplicativo de delivery (2).jpeg" alt="Entregador" class="img-fluid">
-            </div>
+            </nav>
+            
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+                <span class="menu-toggle-line"></span>
+                <span class="menu-toggle-line"></span>
+                <span class="menu-toggle-line"></span>
+            </button>
         </div>
-    </div>
-</section>
+    </header>
 
-<!-- Depoimentos -->
-<section class="testimonials-section">
-    <div class="container">
-        <div class="section-header">
-            <h2>O que dizem nossos clientes</h2>
-            <p>Avaliações reais de quem já experimentou</p>
-        </div>
-
-        <div class="testimonials-slider">
-            <!-- Depoimento 1 -->
-            <div class="testimonial">
-                <div class="testimonial-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">"Melhor churrasco delivery que já pedi! A carne veio no ponto perfeito e a
-                    entrega foi super rápida. Recomendo a picanha!"</p>
-                <div class="testimonial-author">
-                    <img src="1af7a312458fba632599c3f37c73b800.jpg" Cliente 1">
-                    <div>
-                        <h4>Carlos Silva</h4>
-                        <span>Rio de Janeiro, Rj</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Depoimento 2 -->
-            <div class="testimonial">
-                <div class="testimonial-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <p class="testimonial-text">"Sempre peço quando recebo amigos em casa. As porções são generosas e o
-                    sabor é incrível. Já virou tradição!"</p>
-                <div class="testimonial-author">
-                    <img src="1577e7f0d6511db518d5d77169b13378.jpg" alt="Cliente 2">
-                    <div>
-                        <h4>Ana Oliveira</h4>
-                        <span>Toquio, JP</span>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-slider">
+            <div class="hero-slide active" style="background-image: url('assets/hero-bg.jpg');">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">Churrasco <span>Premium</span> Delivery</h1>
+                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Cortes selecionados, preparados por chefs especializados e entregues na sua casa</p>
+                        <div class="hero-cta" data-aos="fade-up" data-aos-delay="300">
+                            <a href="#delivery" class="btn btn-primary btn-lg mr-3">Pedir Agora</a>
+                            <a href="#menu" class="btn btn-outline btn-lg">Ver Cardápio</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="testimonials-cta">
-            <button class="btn btn-secondary">Deixe sua avaliação</button>
-        </div>
-    </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq" class="faq-section">
-    <div class="container">
-        <div class="section-header">
-            <h2>Perguntas Frequentes</h2>
-            <p>Tire suas dúvidas sobre nosso serviço</p>
-        </div>
-
-        <div class="faq-accordion">
-            <!-- Pergunta 1 -->
-            <div class="faq-item">
-                <button class="faq-question">
-                    <span>Quais são as formas de pagamento?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </button>
-                <div class="faq-answer">
-                    <p>Aceitamos cartões de crédito (Visa, Mastercard, Elo, American Express), débito, Pix, dinheiro e
-                        ticket alimentação (Sodexo, Alelo, VR). Todos os pagamentos online são processados com
-                        segurança.</p>
-                </div>
-            </div>
-
-            <!-- Pergunta 2 -->
-            <div class="faq-item">
-                <button class="faq-question">
-                    <span>Qual o horário de funcionamento?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </button>
-                <div class="faq-answer">
-                    <p>Funcionamos de terça a domingo, das 11h às 23h. Aos sábados e feriados, das 12h às 00h. Fechamos
-                        às segundas para manutenção.</p>
-                </div>
-            </div>
-
-            <!-- Mais perguntas podem ser adicionadas aqui -->
-        </div>
-
-        <div class="faq-cta">
-            <p>Ainda tem dúvidas? Fale com nosso atendimento:</p>
-            <a href="https://wa.me/551112345678" class="btn btn-whatsapp">
-                <i class="fab fa-whatsapp"></i> WhatsApp
+        
+        <div class="hero-scroll-down">
+            <a href="#destaques" aria-label="Role para baixo">
+                <svg width="30" height="50" viewBox="0 0 30 50" fill="none">
+                    <path d="M15 0V35M15 35L8 28M15 35L22 28" stroke="currentColor" stroke-width="2"/>
+                    <path d="M15 40V50" stroke="currentColor" stroke-width="2"/>
+                </svg>
             </a>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Contato -->
-<section id="contato" class="contact-section">
-    <div class="container">
-        <div class="contact-content">
-            <div class="contact-info">
-                <h2>Entre em Contato</h2>
-                <p>Tire suas dúvidas, faça sugestões ou envie elogios</p>
-
-                <ul class="contact-list">
-                    <li>
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Rua do Churrasco, 123 - Centro, São Paulo - SP</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-phone-alt"></i>
-                        <span>(11) 1234-5678</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-envelope"></i>
-                        <span>contato@churrasquinhodocumpadi.com</span>
-                    </li>
-                </ul>
-
-                <div class="contact-social">
-                    <p>Siga-nos:</p>
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <!-- Destaques -->
+    <section class="section destaques" id="destaques">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Nossos <span>Destaques</span></h2>
+                <p class="section-subtitle">Os cortes mais pedidos pelos nossos clientes</p>
+            </div>
+            
+            <div class="destaques-grid">
+                <div class="destaque-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="destaque-card-inner">
+                        <div class="destaque-card-img">
+                            <img src="assets/picanha.jpg" alt="Picanha Premium" loading="lazy">
+                            <div class="destaque-card-badge">Mais Pedido</div>
+                        </div>
+                        <div class="destaque-card-content">
+                            <h3>Picanha Premium</h3>
+                            <p>Corte nobre maturado por 21 dias, preparada no ponto perfeito</p>
+                            <div class="destaque-card-footer">
+                                <span class="price">R$ 89,90</span>
+                                <button class="btn btn-primary btn-sm">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="destaque-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="destaque-card-inner">
+                        <div class="destaque-card-img">
+                            <img src="assets/costela.jpg" alt="Costela Angus" loading="lazy">
+                        </div>
+                        <div class="destaque-card-content">
+                            <h3>Costela Angus</h3>
+                            <p>Costela desossada de gado Angus, 12h de cocção em fogo baixo</p>
+                            <div class="destaque-card-footer">
+                                <span class="price">R$ 79,90</span>
+                                <button class="btn btn-primary btn-sm">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="destaque-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="destaque-card-inner">
+                        <div class="destaque-card-img">
+                            <img src="assets/file-mignon.jpg" alt="Filé Mignon" loading="lazy">
+                        </div>
+                        <div class="destaque-card-content">
+                            <h3>Filé Mignon</h3>
+                            <p>Corte macio e suculento, acompanha molho de vinho tinto</p>
+                            <div class="destaque-card-footer">
+                                <span class="price">R$ 95,90</span>
+                                <button class="btn btn-primary btn-sm">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="contact-form">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Seu nome" required>
+    <!-- Promoções -->
+    <section class="section promocoes" id="promocoes">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Promoções <span>Exclusivas</span></h2>
+                <p class="section-subtitle">Aproveite nossas ofertas por tempo limitado</p>
+            </div>
+            
+            <div class="promocoes-grid">
+                <div class="promocao-card promo-highlight" data-aos="fade-up" data-aos-delay="100">
+                    <div class="promocao-card-inner">
+                        <div class="promocao-card-tag">Destaque</div>
+                        <div class="promocao-card-img">
+                            <img src="assets/combo-familia.jpg" alt="Combo Família" loading="lazy">
+                        </div>
+                        <div class="promocao-card-content">
+                            <h3>Combo Família</h3>
+                            <p>Picanha, linguiça, frango, arroz, farofa e vinagrete para 4 pessoas</p>
+                            <div class="promocao-card-prices">
+                                <span class="old-price">R$ 199,90</span>
+                                <span class="new-price">R$ 159,90</span>
+                            </div>
+                            <div class="promocao-card-timer">
+                                <i class="fas fa-clock"></i>
+                                <span class="countdown" data-time="2023-12-31T23:59:59">Termina em: 2d 12h 30m</span>
+                            </div>
+                            <button class="btn btn-primary btn-block">Aproveitar Oferta</button>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+                </div>
+                
+                <div class="promocao-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="promocao-card-inner">
+                        <div class="promocao-card-img">
+                            <img src="assets/combo-casais.jpg" alt="Combo Casais" loading="lazy">
+                        </div>
+                        <div class="promocao-card-content">
+                            <h3>Combo Casais</h3>
+                            <p>2 Filés Mignon, 2 porções de batata rústica e molho especial</p>
+                            <div class="promocao-card-prices">
+                                <span class="old-price">R$ 129,90</span>
+                                <span class="new-price">R$ 99,90</span>
+                            </div>
+                            <button class="btn btn-primary btn-block">Aproveitar Oferta</button>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="tel" id="phone" name="phone" placeholder="Seu telefone">
+                </div>
+                
+                <div class="promocao-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="promocao-card-inner">
+                        <div class="promocao-card-img">
+                            <img src="assets/rodizio-caseiro.jpg" alt="Rodízio Caseiro" loading="lazy">
+                        </div>
+                        <div class="promocao-card-content">
+                            <h3>Rodízio Caseiro</h3>
+                            <p>5 cortes diferentes + acompanhamentos para 2 pessoas</p>
+                            <div class="promocao-card-prices">
+                                <span class="old-price">R$ 149,90</span>
+                                <span class="new-price">R$ 119,90</span>
+                            </div>
+                            <button class="btn btn-primary btn-block">Aproveitar Oferta</button>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" rows="5" placeholder="Sua mensagem" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
-                </form>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Mapa -->
-<section class="map-section">
-    <div class="container">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0754267452926!2d-46.65342658447538!3d-23.565734367638054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1623869713996!5m2!1spt-BR!2sbr"
-            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-</section>
-
-<!-- Rodapé -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="faz uma logo GOLDEN GRILL.jpeg" alt="GOLDEN GRILL" width="70">
-                <p>O melhor churrasco do Mundo</p>
+    <!-- Delivery -->
+    <section class="section delivery" id="delivery">
+        <div class="container">
+            <div class="delivery-grid">
+                <div class="delivery-content" data-aos="fade-right">
+                    <h2 class="section-title">Delivery <span>Premium</span></h2>
+                    <p class="section-subtitle">Entregamos a experiência de um churrasco premium na sua casa</p>
+                    
+                    <div class="delivery-features">
+                        <div class="delivery-feature" data-aos="fade-right" data-aos-delay="100">
+                            <div class="delivery-feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="delivery-feature-text">
+                                <h3>Embalagem Segura</h3>
+                                <p>Caixas térmicas que mantêm a temperatura ideal durante o transporte</p>
+                            </div>
+                        </div>
+                        
+                        <div class="delivery-feature" data-aos="fade-right" data-aos-delay="200">
+                            <div class="delivery-feature-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="delivery-feature-text">
+                                <h3>Entrega Rápida</h3>
+                                <p>Entregamos em até 45 minutos na região central</p>
+                            </div>
+                        </div>
+                        
+                        <div class="delivery-feature" data-aos="fade-right" data-aos-delay="300">
+                            <div class="delivery-feature-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="delivery-feature-text">
+                                <h3>Rastreamento</h3>
+                                <p>Acompanhe em tempo real a rota do seu pedido</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="delivery-apps" data-aos="fade-right" data-aos-delay="400">
+                        <p>Disponível também em:</p>
+                        <div class="delivery-apps-buttons">
+                            <a href="#" class="btn btn-app">
+                                <i class="fab fa-apple"></i>
+                                <span>App Store</span>
+                            </a>
+                            <a href="#" class="btn btn-app">
+                                <i class="fab fa-google-play"></i>
+                                <span>Google Play</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="delivery-form" data-aos="fade-left" data-aos-delay="100">
+                    <div class="delivery-form-container">
+                        <h3>Faça seu pedido</h3>
+                        <form id="deliveryForm">
+                            <div class="form-group">
+                                <label for="delivery-cep">CEP</label>
+                                <div class="input-group">
+                                    <input type="text" id="delivery-cep" placeholder="Digite seu CEP" required>
+                                    <button type="button" class="btn btn-outline btn-sm" id="checkCep">Verificar</button>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="delivery-address">Endereço</label>
+                                <input type="text" id="delivery-address" placeholder="Rua, número, complemento" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="delivery-neighborhood">Bairro</label>
+                                    <input type="text" id="delivery-neighborhood" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="delivery-city">Cidade</label>
+                                    <input type="text" id="delivery-city" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="delivery-time">Horário de Entrega</label>
+                                <select id="delivery-time" required>
+                                    <option value="">Selecione</option>
+                                    <option value="asap">O mais rápido possível</option>
+                                    <option value="12-14">12:00 - 14:00</option>
+                                    <option value="18-20">18:00 - 20:00</option>
+                                    <option value="20-22">20:00 - 22:00</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="delivery-payment">Forma de Pagamento</label>
+                                <select id="delivery-payment" required>
+                                    <option value="">Selecione</option>
+                                    <option value="credit">Cartão de Crédito</option>
+                                    <option value="debit">Cartão de Débito</option>
+                                    <option value="pix">PIX</option>
+                                    <option value="cash">Dinheiro</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-block" id="deliverySubmit">
+                                <span class="btn-text">Continuar para o cardápio</span>
+                                <div class="btn-loader hidden">
+                                    <div class="loader-dot"></div>
+                                    <div class="loader-dot"></div>
+                                    <div class="loader-dot"></div>
+                                </div>
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="footer-links">
-                <div class="links-column">
+    <!-- Rodapé -->
+    <footer class="footer" id="contato">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-logo">
+                    <img src="assets/logo-golden-grill-white.png" alt="Golden Grill" width="180" loading="lazy">
+                    <p>O melhor churrasco premium delivery</p>
+                    
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
                     <h3>Menu</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="cardapio.html">Cardápio</a></li>
-                        <li><a href="cardapio.html">Bebidas</a></li>
-                        <li><a href="promoçoes.html">Promoções</a></li>
-                        <li><a href="delivery.html">Delivery</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Cardápio</a></li>
+                        <li><a href="#promocoes">Promoções</a></li>
+                        <li><a href="#delivery">Delivery</a></li>
+                        <li><a href="login.html">Login</a></li>
                     </ul>
                 </div>
-
-                <div class="links-column">
+                
+                <div class="footer-col">
                     <h3>Institucional</h3>
                     <ul>
-                        <li><a href="#sobre">Sobre Nós</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
                         <li><a href="contato.html">Contato</a></li>
-                        <li><a href="#">Trabalhe Conosco</a></li>
-                        <li><a href="#">Política de Privacidade</a></li>
-                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="termos-uso.html">Termos de Uso</a></li>
+                        <li><a href="trabalhe-conosco.html">Trabalhe Conosco</a></li>
                     </ul>
                 </div>
-
-                <div class="links-column">
+                
+                <div class="footer-col">
                     <h3>Atendimento</h3>
-                    <ul>
+                    <ul class="footer-contact">
                         <li><i class="fas fa-phone-alt"></i> (11) 1234-5678</li>
                         <li><i class="fas fa-whatsapp"></i> (11) 98765-4321</li>
-                        <li><i class="fas fa-envelope"></i> contato@GOLDEN GRILL.com</li>
+                        <li><i class="fas fa-envelope"></i> contato@goldengrill.com</li>
                         <li><i class="fas fa-clock"></i> Ter-Dom: 11h-23h</li>
                     </ul>
                 </div>
+                
+                <div class="footer-col footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Receba nossas promoções e novidades</p>
+                    <form id="newsletterForm">
+                        <div class="input-group">
+                            <input type="email" placeholder="Seu melhor e-mail" required>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
-
-            <div class="footer-newsletter">
-                <h3>Receba nossas ofertas</h3>
-                <form id="newsletterForm">
-                    <input type="email" placeholder="Seu melhor e-mail" required>
-                    <button type="submit" class="btn btn-primary">Assinar</button>
-                </form>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    &copy; 2023 Golden Grill. Todos os direitos reservados.
+                </div>
                 <div class="footer-payments">
-                    <p>Formas de pagamento:</p>
-                    <div class="payment-methods">
-                        <i class="fab fa-cc-visa"></i>
-                        <i class="fab fa-cc-mastercard"></i>
-                        <i class="fab fa-cc-amex"></i>
-                        <i class="fab fa-cc-paypal"></i>
-                    </div>
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
                 </div>
             </div>
         </div>
+    </footer>
 
-        <div class="footer-bottom">
-            <div class="copyright">
-                &copy; 2025 GOLDEN GRILL. Todos os direitos reservados.
-            </div>
-            <div class="developer">
-                Desenvolvido por <a href="#" target="_blank">Sua Agência</a>
-            </div>
-        </div>
-    </div>
-</footer>
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/5511987654321" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-<!-- WhatsApp Float -->
-<a href="https://wa.me/551112345678" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-</a>
+    <!-- Back to Top -->
+    <a href="#home" class="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
-<!-- Scripts -->
-<script src="js/app.js"></script>
-<!-- Scripts adicionais podem ser incluídos aqui -->
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/app.js"></script>
+    
+    <!-- Inicialização AOS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false
+            });
+        });
+    </script>
 </body>
-
 </html>

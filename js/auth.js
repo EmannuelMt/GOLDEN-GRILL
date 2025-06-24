@@ -113,3 +113,82 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
   });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Simular carregamento (remover após implementação real)
+    setTimeout(() => {
+        document.querySelector('.loading-screen').style.opacity = '0';
+        setTimeout(() => {
+            document.querySelector('.loading-screen').style.display = 'none';
+        }, 500);
+    }, 2000);
+
+    // Toggle password visibility
+    const togglePassword = document.querySelector('.toggle-password');
+    const passwordInput = document.getElementById('password');
+    
+    if (togglePassword && passwordInput) {
+        togglePassword.addEventListener('click', function() {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.innerHTML = type === 'password' ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
+        });
+    }
+
+    // Menu toggle for mobile
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainMenu = document.querySelector('.main-menu');
+    
+    if (menuToggle && mainMenu) {
+        menuToggle.addEventListener('click', function() {
+            mainMenu.classList.toggle('active');
+            this.innerHTML = mainMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+    }
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Form submission with animation
+    const loginForm = document.getElementById('loginForm');
+    const loginButton = document.getElementById('loginButton');
+    
+    if (loginForm && loginButton) {
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            const btnText = loginButton.querySelector('.btn-text');
+            const btnLoader = loginButton.querySelector('.btn-loader');
+            
+            btnText.classList.add('hidden');
+            btnLoader.classList.remove('hidden');
+            loginButton.disabled = true;
+            
+            // Simulate API call (replace with actual login logic)
+            setTimeout(() => {
+                // Hide loading state
+                btnText.classList.remove('hidden');
+                btnLoader.classList.add('hidden');
+                loginButton.disabled = false;
+                
+                // Success animation
+                loginButton.classList.add('animate__animated', 'animate__pulse');
+                
+                setTimeout(() => {
+                    loginButton.classList.remove('animate__animated', 'animate__pulse');
+                    // Redirect after successful login
+                    window.location.href = 'perfil.html';
+                }, 1000);
+            }, 2000);
+        });
+    }
+});
